@@ -1,1 +1,3 @@
-I am typing new input into this file hi
+I am typing new input into this file.
+
+Trail 2: I hope to remove this commit
