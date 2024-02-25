@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Song Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- This is what creates the navigation bar -->
+    <div class = "NavBar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li style="float:right"><a class="active" href="#about">SONG JAM</a></li>
+        </ul>
+    </div>
+    <br> </br> 
+    <!-- Title of the page -->
+    <h1>Song Information: </h1>
+
+    <!-- This is what prints the song details and formats them -->
+    <div class="song-details">
+        <!-- Prints the song name and by which artist -->
+        <p></p>{{ song_details['Song'] }} by {{ song_details['Artist'] }}</p>
+        <!-- Prints the album name and formats the content -->
+        <p>Album: {{ song_details['Album'] }}</p>
+        <!-- Prints the release date and formats the content -->
+        <p>Release Date: {{ song_details['Release Date'] }}</p>
+        <!-- Prints the popularity and formats the content -->
+        <p>Popularity: {{ song_details['Popularity'] }}</p>
+        <!-- Prints the duration and formats the content -->
+        <p>Duration: {{ song_details['Duration (ms)'] }} ms</p>
+
+
+        <audio id="audio-player" controls>
+            <!-- Makes the preview audio link playable. We can now play and pause -->
+            <source src="{{ song_details['Preview URL'] }}" type="audio/mp3">
+        </audio>
+
+        <!-- Prints the spotiy link to that particular song -->
+        <p>Spotify link: <a href="{{ song_details['External URLs']['spotify'] }}" target="_blank">{{ song_details['External URLs']['spotify'] }}</a></p>
+    </div>
+
+</body>
+</html>
