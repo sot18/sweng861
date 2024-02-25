@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script>
+        //This is validating the form before submitting it
+        function validateForm() {
+            var inputName = document.getElementById('inputName').value;
+            //Gets the values of the user input
+
+            var charactersAllowed = /^[a-zA-Z\s]+$/;
+
+            if (inputName.trim() === '') {
+                //If there is no user input 
+                alert('Please enter a name before submitting.');
+                 //Sends the user an alert to type somthing before submitting
+                return false; 
+                //returning false stops the form from submitting
+            }
+
+            if (!charactersAllowed.test(inputName)) {
+                //Check if the characterd entered are alphabets
+                alert("Please enter only letters (a-z, A-Z).");
+                //If not it sends them an alert
+                return false;
+            }
+
+            return true;
+            //Otherwise allows the form submission
+        }
+    </script>
+</head>
+<body>
+
+    <div class = "NavBar">
+    <ul>
+         <!-- This is what creates the navigation bar -->
+        <li><a href="/">Home</a></li>
+        <!-- WThe title of the page floats to the right -->
+        <li style="float:right"><a class="active" href="#about">SONG JAM</a></li>
+    </ul>
+    </div>
+    <br> </br> 
+
+    <!-- Title of the page -->
+    <h1>Song Jam - Dive Deep into the World of Music</h1>
+
+    <form action="{{ url_for('get_selected_option') }}" method="post" onsubmit="return validateForm()">
+        <br> </br>
+        <!-- Line break for formatting -->
+        <!-- Lets the user select between song and artist -->
+        <label for="option">Select Option:</label>
+        <!-- Creates a dropdown -->
+        <select name="option" id="option">
+            <option value="song">Song</option>
+            <option value="artist">Artist</option>
+        </select>
+        <!-- Line break for formatting -->
+        <br> </br>
+        <div id="input-container">
+            <!-- Asks the user to type a name-->
+            <label for="inputName">Enter the name:</label>
+            <!-- Saves the name -->
+            <input type="text" id="inputName" name="inputName" placeholder="Name" required>
+        </div>
+        <br> </br>
+         <!-- Creates a button called Submit -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <div>
+    <h3>
+     <!-- If there are no results -->
+    {% if no_results_message %}
+     <!-- Prints out this message -->
+        <p>{{ no_results_message }}</p>
+    {% endif %}
+     <!-- End -->
+    </h3>
+    </div>
+
+</body>
+</html>
