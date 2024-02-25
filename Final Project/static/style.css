@@ -1,0 +1,209 @@
+div,h2 {
+    color: black; 
+    /*font color*/
+    text-align: center;
+    /*alignment*/
+    font-weight: bold;
+    /*boldsit */
+    font-style: italic;
+    /*italicizes it*/
+}
+
+/*Add styling to select option so it matches wth everything else*/ 
+label {
+    color: black;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/*Add styling to the input box*/ 
+input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-size: 16px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+/*Add styling to the selection box. Made it a little wider*/ 
+select{
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 5px;
+   
+
+}
+/*Add styling to image*/ 
+.details-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Add styling to top 10 songs*/ 
+.top-songs-container li {
+    list-style: none;
+    margin-bottom: 8px;
+}
+
+/*Add styling to the submit button when we hover*/ 
+button:hover {
+    background-color: #45a049;
+}
+
+/*Add styling to sthe button and makes it look better and in theme with background*/ 
+button {
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    font-style: italic;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+/*Add styling to the top 10 songs container*/ 
+.top-songs-container {
+    margin-top: 20px;
+}
+/*Aligns the form to the center*/
+form {
+    text-align: center;
+}
+/*Adds formatting to the song details or the artist details depending on what the user selects*/
+.details-container {
+    margin-top: 15px;
+}
+
+/*Adds formatting to navigation bar. Essentially removes the bullets and makes it look better*/
+.NavBar ul {
+    margin: 0;
+    list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+    
+}
+
+/*General content formatting*/
+body {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+    
+}
+/*Makes the home float to left*/
+.NavBar li {
+    float: left;
+}
+
+/*Sets the background color to black*/
+.NavBar {
+    background-color: black;
+}
+/*Sets the size of the audio player. I put it on 25 as it was closer to the other content*/
+#audio-player {
+    margin-top: 10px;
+    width: 25%;
+}
+
+/*Sets formatitng to the text on the navigation bar*/
+.NavBar li a {
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+/* Formatting to the list on naviation bar*/
+li a {
+    color: white;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*Adds a background when we hover on the title*/
+li a:hover:not(.active) {
+    background-color: #111;
+}
+/*Adds margin in the bottom for every song*/
+.top-songs li {
+    margin-bottom: 5px;
+}
+/*Adds margin in the top for every detail*/
+.song-details {
+    margin-top: 20px;
+} 
+
+/*Adds styling to the image of the artist*/
+.artist-icon img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%; 
+}
+/*Adds backgroud color*/
+.active {
+    background-color: #04AA6D;
+}
+
+/*Adds a backgorund when we hover on navigation*/
+.NavBar li a:hover {
+    background-color: #111; 
+}
+
+/*Adds tyling to artist image*/
+.artist-icon {
+    height: 150px;
+    width: 150px; 
+    border-radius: 10px; 
+    overflow: hidden;
+    margin-right: 20px; 
+} 
+
+/*Adds styling to the main title*/
+h1 {
+    text-align: center;
+    color: #1DB954;
+    font-style: italic;
+    font-weight: bold;
+} 
+/*Adds styling to artist info*/  
+.artist-info {
+    display: flex;   
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+      
+}
+
+/*Adds styling to the top 10 songs*/
+.Top10 li {
+    display: block; 
+    margin-bottom: 10px;
+}
+/*Adds styling to the top 10 songs*/
+.top-songs {
+    background-color: white; 
+    margin-top: 20px;
+    border-radius: 5px;
+    padding: 10px;
+}
+/*Adds styling to the top 10 songs. Removes the bullets*/
+.top-songs ul {
+    list-style-type: none;
+    padding: 0;
+}
+/*Adds styling to the artist details*/
+.artist-details {
+    max-width: 600px;
+}
+/*Adds styling to the top 10 songs*/
+.Top10 {
+    padding: 0;
+}
+/*Bolds the track name*/
+.track-name {
+    font-weight: bold;
+}
