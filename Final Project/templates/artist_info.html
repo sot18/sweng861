@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- This is what creates the navigation bar -->
+    <div class = "NavBar">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <!-- Makes the title float to the right-->
+            <li style="float:right"><a class="active" href="#about">SONG JAM</a></li>
+        </ul>
+    </div>
+    <br> </br> 
+
+    <!--Prints out the title of the page-->
+    <h1>Artist Information: </h1>
+
+    <!--- IF there are details for an artist-->
+    {% if artist_details %}
+    <div class="artist-info">
+        <div class="artist-icon">
+            <!-- Gets either the profile pic -->
+            {% if artist_details['Images'] %}
+                <img src="{{ artist_details['Images'][0]['url'] }}" alt="{{ artist_details['Artist'] }} Profile Picture">
+            {% else %}
+            <!-- Or the default pic-->
+                <img src="default_profile_picture.png" alt="{{ artist_details['Artist'] }} Profile Picture">
+            {% endif %}
+        </div>
+        <div class="artist-details">
+            <!-- Prints out information about the artist-->
+            <p>{{ artist_details['Artist'] }}</p>
+            <!-- Prints out information about the popularity-->
+            <p>Popularity: {{ artist_details['Popularity'] }}</p>
+            <!-- Prints out information about the followers-->
+            <p>Followers: {{ artist_details['Followers'] }}</p>
+        </div>
+    </div>
+
+    <!-- If the artist has top 10 songds-->
+    {% if artist_details['Top 10 Songs'] %}
+        <div class="top-songs">
+            <!-- Prints out the title "Top 10 songs ranked based on popularity"-->
+            <h3>Top 10 Songs: </h3>
+            <ol class = "Top10">
+                <!-- Goes through the loops and check for highest popularity and orders it based on that-->
+                {% for track in artist_details['Top 10 Songs'] %}
+                <li>
+                    <!-- Prints them in a list format-->
+                    <span class="track-name">{{ track['Track'] }}</span>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% endif %}
+{% endif %}
+
+</body>
+</html>
