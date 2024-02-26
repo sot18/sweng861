@@ -1,1 +1,14 @@
+Install Python and set up environment variables
 
+Type python3 --version into the command line to check if Python is installed properly
+
+Install the Directory from Github or download the zip folder submitted and unzip the files
+
+Run these commands to get the virtual environment set up:
+- pip install virtualenv
+- python -m venv env
+- env\Scripts\activate
+
+Run the app.py using python App.py or py App.py
+
+Click on the link that gets generated and this should redirect you to the WebApp
